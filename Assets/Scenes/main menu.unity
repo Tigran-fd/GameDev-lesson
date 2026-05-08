@@ -405,8 +405,8 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: 6bfb55e0c25f01c478aa22e2363128fa, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.2
-  volumeClick: 0.2
+  volumeHover: 0.3
+  volumeClick: 0.3
   pitchRange: 0.1
 --- !u!1 &101396076
 GameObject:
@@ -557,9 +557,14 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: 6bfb55e0c25f01c478aa22e2363128fa, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.2
-  volumeClick: 0.2
+  volumeHover: 0.3
+  volumeClick: 0.3
   pitchRange: 0.1
+--- !u!1 &232326682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9156347144040445547, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+  m_PrefabInstance: {fileID: 2052527093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &238592104
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,8 +715,8 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: 6bfb55e0c25f01c478aa22e2363128fa, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.2
-  volumeClick: 0.2
+  volumeHover: 0.3
+  volumeClick: 0.3
   pitchRange: 0.1
 --- !u!95 &238592110
 Animator:
@@ -1423,6 +1428,126 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &696667236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 696667239}
+  - component: {fileID: 696667238}
+  - component: {fileID: 696667237}
+  - component: {fileID: 696667240}
+  m_Layer: 0
+  m_Name: NetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &696667237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696667236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkManager
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  headlessStartMode: 0
+  editorAutoStart: 0
+  sendRate: 60
+  offlineScene: Assets/Scenes/main menu.unity
+  onlineScene: Assets/Scenes/Game.unity
+  offlineSceneLoadDelay: 0
+  transport: {fileID: 0}
+  networkAddress: localhost
+  maxConnections: 100
+  disconnectInactiveConnections: 0
+  disconnectInactiveTimeout: 60
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 232326682}
+  autoCreatePlayer: 1
+  playerSpawnMethod: 1
+  spawnPrefabs: []
+  exceptionsDisconnect: 1
+  snapshotSettings:
+    bufferTimeMultiplier: 2
+    bufferLimit: 32
+    catchupNegativeThreshold: -1
+    catchupPositiveThreshold: 1
+    catchupSpeed: 0.019999999552965164
+    slowdownSpeed: 0.03999999910593033
+    driftEmaDuration: 1
+    dynamicAdjustment: 1
+    dynamicAdjustmentTolerance: 1
+    deliveryTimeEmaDuration: 2
+  evaluationMethod: 0
+  evaluationInterval: 3
+  timeInterpolationGui: 0
+--- !u!114 &696667238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696667236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Mirror.Transports::kcp2k.KcpTransport
+  port: 7777
+  DualMode: 1
+  NoDelay: 1
+  Interval: 10
+  Timeout: 10000
+  RecvBufferSize: 7361536
+  SendBufferSize: 7361536
+  FastResend: 2
+  ReceiveWindowSize: 4096
+  SendWindowSize: 4096
+  MaxRetransmit: 40
+  MaximizeSocketBuffers: 1
+  ReliableMaxMessageSize: 297433
+  UnreliableMaxMessageSize: 1194
+  debugLog: 0
+  statisticsGUI: 0
+  statisticsLog: 0
+--- !u!4 &696667239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696667236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 1080, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696667240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696667236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cabd404c9e04840846b06f42b4cbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NetworkLauncher
 --- !u!1 &718140910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,8 +1955,8 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: c8d9b850be9d7fc4db1af673bf6be9f3, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.5
-  volumeClick: 0.2
+  volumeHover: 0.6
+  volumeClick: 0.3
   pitchRange: 0.1
 --- !u!114 &852132386
 MonoBehaviour:
@@ -1876,7 +2001,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 852132387}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 696667237}
+        m_TargetAssemblyTypeName: Mirror.NetworkManager, Mirror
+        m_MethodName: StartHost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &852132387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2170,8 +2307,8 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: c8d9b850be9d7fc4db1af673bf6be9f3, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.5
-  volumeClick: 0.2
+  volumeHover: 0.6
+  volumeClick: 0.3
   pitchRange: 0.1
 --- !u!1 &969689242
 GameObject:
@@ -2667,8 +2804,8 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: c8d9b850be9d7fc4db1af673bf6be9f3, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.5
-  volumeClick: 0.2
+  volumeHover: 0.6
+  volumeClick: 0.3
   pitchRange: 0.1
 --- !u!114 &1480461040
 MonoBehaviour:
@@ -2913,8 +3050,8 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: c8d9b850be9d7fc4db1af673bf6be9f3, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.5
-  volumeClick: 0.2
+  volumeHover: 0.6
+  volumeClick: 0.3
   pitchRange: 0.1
 --- !u!1 &1558780865
 GameObject:
@@ -3929,9 +4066,98 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: 6bfb55e0c25f01c478aa22e2363128fa, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.2
-  volumeClick: 0.2
+  volumeHover: 0.3
+  volumeClick: 0.3
   pitchRange: 0.1
+--- !u!1001 &2052527093
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 43.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 48.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7643307
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.64482456
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 80.305
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144040445547, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      propertyPath: m_Name
+      value: FirstPersonController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9156347144040445547, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2052527098}
+  m_SourcePrefab: {fileID: 100100000, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
+--- !u!114 &2052527098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232326682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 2254562819
+  _assetId: 1690512970
+  serverOnly: 1
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &2099630700
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,8 +4213,8 @@ MonoBehaviour:
   audioSource: {fileID: 435708819}
   hoverSound: {fileID: 8300000, guid: c8d9b850be9d7fc4db1af673bf6be9f3, type: 3}
   clickSound: {fileID: 8300000, guid: 7ed47b71e97e0474a9fe2e9b8f559e34, type: 3}
-  volumeHover: 0.5
-  volumeClick: 0.2
+  volumeHover: 0.6
+  volumeClick: 0.3
   pitchRange: 0.1
 --- !u!114 &2099630703
 MonoBehaviour:
@@ -4033,7 +4259,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2099630704}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 696667237}
+        m_TargetAssemblyTypeName: Mirror.NetworkManager, Mirror
+        m_MethodName: StartClient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2099630704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4168,9 +4406,11 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2052527093}
   - {fileID: 2130455746}
   - {fileID: 893171284}
   - {fileID: 1310179609}
   - {fileID: 1590313475}
   - {fileID: 969689244}
   - {fileID: 1267949826}
+  - {fileID: 696667239}
