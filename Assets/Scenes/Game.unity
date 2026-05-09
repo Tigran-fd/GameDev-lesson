@@ -1723,7 +1723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249689016}
-  - component: {fileID: 249689015}
+  - component: {fileID: 249689017}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -1731,19 +1731,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &249689015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249689014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0912e19a4b091884b0a26142d576d32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.DeskOfElements
-  deskTransform: {fileID: 1767981223}
 --- !u!4 &249689016
 Transform:
   m_ObjectHideFlags: 0
@@ -1761,6 +1748,19 @@ Transform:
   - {fileID: 1767981223}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249689017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249689014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601430039bafdd38c97fa4eed5dffaba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.DeskOfElements
+  deskTransform: {fileID: 1767981223}
 --- !u!1 &256973468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,7 +2221,7 @@ GameObject:
   - component: {fileID: 295713432}
   - component: {fileID: 295713431}
   - component: {fileID: 295713430}
-  - component: {fileID: 295713429}
+  - component: {fileID: 295713434}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -2229,26 +2229,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &295713429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295713428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c7fe6c9570466f9a47e3687b3b016b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Player
-  playerName: Tiko
-  playerColor: {r: 1, g: 0, b: 0, a: 0}
-  playerIndex: 1
-  hand: []
-  composedFormulas: []
-  score: 0
-  handTransform: {fileID: 2068818307}
-  formulaAreaTransform: {fileID: 614002734}
 --- !u!136 &295713430
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2346,6 +2326,26 @@ Transform:
   - {fileID: 2068818307}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &295713434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295713428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69bb72f4bbdb469cb1d6ba55b40c184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Player
+  playerName: Tiko
+  playerColor: {r: 1, g: 0, b: 0, a: 0}
+  playerIndex: 1
+  hand: []
+  composedFormulas: []
+  score: 0
+  handTransform: {fileID: 2068818307}
+  formulaAreaTransform: {fileID: 614002734}
 --- !u!1 &295741720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,10 +2562,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 309681487}
-  - component: {fileID: 309681486}
-  - component: {fileID: 309681485}
-  - component: {fileID: 309681484}
-  - component: {fileID: 309681483}
+  - component: {fileID: 309681491}
+  - component: {fileID: 309681490}
+  - component: {fileID: 309681489}
+  - component: {fileID: 309681488}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2573,65 +2573,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &309681483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309681482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513cf9df7aaa3d52c8ec7306f0a9ebb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.ScoreManager
---- !u!114 &309681484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309681482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47065ff96853e218f96ebb92063a284a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.ActionExecutor
-  composedFormulaPrefab: {fileID: 0}
---- !u!114 &309681485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309681482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18667daec1ef48461abaf8e7dc1ad30c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.TurnManager
---- !u!114 &309681486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309681482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5e9c3462eff80338fb5399d324acc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.GameManager
-  players:
-  - {fileID: 1276469311}
-  - {fileID: 295713429}
-  desk: {fileID: 249689015}
-  deck: {fileID: 957263940}
-  turnManager: {fileID: 309681485}
-  actionExecutor: {fileID: 309681484}
-  scoreManager: {fileID: 309681483}
-  initialHandSize: 4
-  initialDeskSize: 4
 --- !u!4 &309681487
 Transform:
   m_ObjectHideFlags: 0
@@ -2647,6 +2588,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309681488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309681482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbc2079e4845f4df967a73fa9b6ba0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.TurnManager
+--- !u!114 &309681489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309681482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c6387653d8ddfa3849c034bf90d9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.ScoreManager
+--- !u!114 &309681490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309681482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4503f882697a0d878ec878b584b2c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.ActionExecutor
+  composedFormulaPrefab: {fileID: 0}
+--- !u!114 &309681491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309681482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f529e8185e8baede39647a45f4c16308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.GameManager
+  players:
+  - {fileID: 1276469316}
+  - {fileID: 295713434}
+  desk: {fileID: 249689017}
+  deck: {fileID: 957263942}
+  turnManager: {fileID: 309681488}
+  actionExecutor: {fileID: 309681490}
+  scoreManager: {fileID: 309681489}
+  initialHandSize: 4
+  initialDeskSize: 4
 --- !u!1001 &309989893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8534,7 +8534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 957263941}
-  - component: {fileID: 957263940}
+  - component: {fileID: 957263942}
   m_Layer: 0
   m_Name: Deck
   m_TagString: Untagged
@@ -8542,21 +8542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &957263940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957263939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ace44bfc0a0d8cf9952842f9dc82f04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Deck
-  allCardData: []
-  cardPrefab: {fileID: 0}
-  deckTransform: {fileID: 1585259469}
 --- !u!4 &957263941
 Transform:
   m_ObjectHideFlags: 0
@@ -8573,6 +8558,21 @@ Transform:
   - {fileID: 1585259469}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957263942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957263939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a01078f68ae26c9bf25844fff4fdfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Deck
+  allCardData: []
+  cardPrefab: {fileID: 0}
+  deckTransform: {fileID: 1585259469}
 --- !u!1001 &962266661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11359,7 +11359,7 @@ GameObject:
   - component: {fileID: 1276469314}
   - component: {fileID: 1276469313}
   - component: {fileID: 1276469312}
-  - component: {fileID: 1276469311}
+  - component: {fileID: 1276469316}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -11367,26 +11367,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1276469311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276469310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c7fe6c9570466f9a47e3687b3b016b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Player
-  playerName: Lyov
-  playerColor: {r: 0, g: 0, b: 1, a: 0}
-  playerIndex: 0
-  hand: []
-  composedFormulas: []
-  score: 0
-  handTransform: {fileID: 1066077578}
-  formulaAreaTransform: {fileID: 1550948275}
 --- !u!136 &1276469312
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11484,6 +11464,26 @@ Transform:
   - {fileID: 1066077578}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1276469316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276469310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69bb72f4bbdb469cb1d6ba55b40c184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Player
+  playerName: Lyov
+  playerColor: {r: 0, g: 0, b: 1, a: 0}
+  playerIndex: 0
+  hand: []
+  composedFormulas: []
+  score: 0
+  handTransform: {fileID: 1066077578}
+  formulaAreaTransform: {fileID: 1550948275}
 --- !u!4 &1280904500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312989334736930888, guid: b5eae47ef45b94167a5861428f8a9304, type: 3}
