@@ -5,22 +5,22 @@ namespace PotionMaking
 {
     public enum ElementType
     {
-        BatsWing,
-        EnergyOfMind,
-        FernFlower,
-        CrystalOfAir,
-        MandrakeRoot,
-        Bloodstone,
-        DragonsTooth,
-        Mushrarms,
-        PhoenixFeather,
-        SpringWater,
-        MoonDust,
-        SerpentScale,
-        StarFragment,
-        ThunderEssence,
-        VoidShard,
-        WillowBark
+        OgnenniySvet,
+        RodnikovayaVoda,
+        Belladonna,
+        CvetokPaporotnika,
+        GlazZmei,
+        KriloLetucheyMishi,
+        EnergiaMisli,
+        KristalVozduxa,
+        KamenKrovi,
+        KorenMandragori,
+        Mushrumi,
+        PeroFeniksa,
+        ZubDrakona,
+        KvintessenciaVoli,
+        VolniEfira,
+        AstralnayaEnergia
     }
 
     public enum FormulaType
