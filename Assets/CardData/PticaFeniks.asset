@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6ed7f4777b8043c9bab8a11e88660e, type: 3}
   m_Name: PticaFeniks
   m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.CardData
-  cardName: Ognennaya Salamandra
-  cardArt: {fileID: 21300000, guid: 32e55a53fa9efb244bd02207557db264, type: 3}
+  cardName: Ptica Feniks
+  cardArt: {fileID: 21300000, guid: a82ec922622ac3746bf0b2e701241086, type: 3}
   element: 5
   hasFormula: 1
-  formulaName: Ognennaya Salamandra
+  formulaName: Ptica Feniks
   formulaType: 5
   victoryPoints: 8
   components:
   - isElement: 1
     elementType: 13
-    formulaType: 3
+    formulaType: 1
     isAnyOfType: 0
   - isElement: 1
     elementType: 1

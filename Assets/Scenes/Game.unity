@@ -8570,8 +8570,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a01078f68ae26c9bf25844fff4fdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Deck
-  allCardData: []
-  cardPrefab: {fileID: 0}
+  allCardData:
+  - {fileID: 11400000, guid: 114e6009507a24f8988737eba0f367fd, type: 2}
+  - {fileID: 11400000, guid: 95e98b3dec0a0b870989b30d193a8793, type: 2}
+  - {fileID: 11400000, guid: c5c081ac9c242f415b4970ede9aa1180, type: 2}
+  - {fileID: 11400000, guid: b97e65e024b1c1b9aad34ab81bec6eff, type: 2}
+  - {fileID: 11400000, guid: 3e741b41f2ac96e57a909233ae80942a, type: 2}
+  - {fileID: 11400000, guid: 6e76f6ccefd9d7932808d1083f1e8450, type: 2}
+  - {fileID: 11400000, guid: 1190b187795fbf4629d6eca784973734, type: 2}
+  - {fileID: 11400000, guid: f9a1842aeb2dc770599480b2271093b5, type: 2}
+  - {fileID: 11400000, guid: ebaf118b2e3fdcb97b43ac11d9dd0b98, type: 2}
+  - {fileID: 11400000, guid: 516de8f77e24469d18ed05dae97a46e6, type: 2}
+  - {fileID: 11400000, guid: 70c2ebf3efa94e7929169bbd0ba75569, type: 2}
+  - {fileID: 11400000, guid: 814ddae67d4d8a4a1af06ecbdcf8b396, type: 2}
+  - {fileID: 11400000, guid: 404554f5772e24bdca86a2ffa151c30b, type: 2}
+  - {fileID: 11400000, guid: 967d533cbb64add8c8d82252d8986cf4, type: 2}
+  - {fileID: 11400000, guid: 24a18c1777036103285882ce72d78f19, type: 2}
+  - {fileID: 11400000, guid: d71d3d8691ddacf3fb18297ec3cfc355, type: 2}
+  - {fileID: 11400000, guid: 21e025ec9e20200329fd0051e234a8cd, type: 2}
+  - {fileID: 11400000, guid: 67f4a1493022568c686f072d2b20af90, type: 2}
+  - {fileID: 11400000, guid: 6f4cbed9733b9c26d8a16305604fab77, type: 2}
+  - {fileID: 11400000, guid: 02481fbf81fe1dc82aa6d639110d5358, type: 2}
+  - {fileID: 11400000, guid: e129544723d1a0c3ba63eeb5771fc149, type: 2}
+  - {fileID: 11400000, guid: dc3c483a1dbe925db97686f74ad9655e, type: 2}
+  - {fileID: 11400000, guid: 367e5c7f031708c02b023d5da726d422, type: 2}
+  - {fileID: 11400000, guid: 95dd267c9802f64f784eb6978f21a16e, type: 2}
+  - {fileID: 11400000, guid: 6839cfcbcc5d93612a87faf4c6bf8147, type: 2}
+  - {fileID: 11400000, guid: a3f88a9b2d458a0a69a43bc2a72ed9db, type: 2}
+  - {fileID: 11400000, guid: 4d9e1193a4611d5e88666a9d0963ce2d, type: 2}
+  - {fileID: 11400000, guid: 4ee62858eb1d632d18f5f7952766f4df, type: 2}
+  - {fileID: 11400000, guid: 0f22ab89ce26496fb93c8f2e801d3bb5, type: 2}
+  - {fileID: 11400000, guid: 0d2443618c1fd1dc8adc5756c46d9c70, type: 2}
+  - {fileID: 11400000, guid: 47620dc86394a51a095d882d508316ce, type: 2}
+  - {fileID: 11400000, guid: ce07eea98f2cbc8f892bf4d81c6b139d, type: 2}
+  - {fileID: 11400000, guid: 0ab9b1d7c7e37258bb0874a19d99f6c3, type: 2}
+  - {fileID: 11400000, guid: 5545faac7d83af328b1558f7bfab0e3b, type: 2}
+  - {fileID: 11400000, guid: 493adab29e5f084268ad22b0f99c3d32, type: 2}
+  - {fileID: 11400000, guid: 7c96233f86f3dc82b8bf3ec735d62ee3, type: 2}
+  - {fileID: 11400000, guid: e4c01a4a25902c555987c69c3666081c, type: 2}
+  - {fileID: 11400000, guid: a41999536acaba21ab5e6ff7185d8cc3, type: 2}
+  - {fileID: 11400000, guid: 3eae5f008480354378ca2cbe1f79cb8e, type: 2}
+  - {fileID: 11400000, guid: ed38a47257049ea48a98e28d53c877d9, type: 2}
+  - {fileID: 11400000, guid: 8a1d86a403cedc405bce8f4ea45f7bb7, type: 2}
+  - {fileID: 11400000, guid: 86910629c72506056a11d421e794f12e, type: 2}
+  - {fileID: 11400000, guid: b1dc1e5022fdf63eba8d2463aadbe6e4, type: 2}
+  - {fileID: 11400000, guid: f14411d1068d72649bf0169e151f3caf, type: 2}
+  - {fileID: 11400000, guid: a60f4d9a4e2cd86cd81f931360ed7e22, type: 2}
+  - {fileID: 11400000, guid: 0defc6502dab2f80ebb0374d4b01a0ab, type: 2}
+  - {fileID: 11400000, guid: eb5cf875e135d1f578df101d06023f31, type: 2}
+  - {fileID: 11400000, guid: 446b2b4e0b7020e71b14ce77169ad31b, type: 2}
+  cardPrefab: {fileID: 2366326502080347953, guid: 15f2edfc839c9a0539ccc117ca7d965c, type: 3}
   deckTransform: {fileID: 1585259469}
 --- !u!1001 &962266661
 PrefabInstance:
