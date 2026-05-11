@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6ed7f4777b8043c9bab8a11e88660e, type: 3}
+  m_Name: EliksirSili
+  m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.CardData
+  cardName: Eliksir Sili
+  cardArt: {fileID: 21300000, guid: 86ad9644e0b2faa47a324d22fd6c078a, type: 3}
+  element: 6
+  hasFormula: 1
+  formulaName: EliksirSili
+  formulaType: 0
+  victoryPoints: 2
+  components:
+  - isElement: 1
+    elementType: 15
+    formulaType: 0
+    isAnyOfType: 0
+  - isElement: 1
+    elementType: 8
+    formulaType: 0
+    isAnyOfType: 0
+  spellType: 0
+  isSupremeCard: 0
+  supremeElements: 
