@@ -1,34 +1,58 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems; // Обязательно для работы с событиями
+using UnityEngine.EventSystems;
 
-public class UISoundHandler : MonoBehaviour, IPointerEnterHandler, ISelectHandler
+public class TMPHoverEffect : MonoBehaviour,
+    IPointerEnterHandler,
+    IPointerExitHandler
 {
-    [Header("Настройки звука")]
-    public AudioSource audioSource; // Ссылка на компонент AudioSource
-    public AudioClip hoverSound;    // Файл звука наведения
+    public TextMeshProUGUI text;
 
-    [Range(0.1f, 2f)]
-    public float pitchRange = 0.1f; // Разброс высоты звука, чтобы не надоедало
+    private Material mat;
 
-    // Срабатывает при наведении мыши
+    public float normalGlow = 0.5f;
+    public float hoverGlow = 1f;
+
+    public float normalOutline = 0f;
+    public float hoverOutline = 0.6f;
+
+    void Start()
+    {
+        if (text == null)
+            text = GetComponentInChildren<TextMeshProUGUI>();
+
+        if (text == null)
+        {
+            Debug.LogError("TMPHoverEffect: TextMeshProUGUI not found!", gameObject);
+            return;
+        }
+
+        mat = Instantiate(text.fontMaterial);
+        text.fontMaterial = mat;
+
+        ApplyNormal();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
-        PlaySound();
+        if (mat == null)
+            return;
+
+        mat.SetFloat(ShaderUtilities.ID_GlowPower, hoverGlow);
+        mat.SetFloat(ShaderUtilities.ID_OutlineWidth, hoverOutline);
     }
 
-    // Срабатывает при выделении кнопками клавиатуры или геймпада
-    public void OnSelect(BaseEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
-        PlaySound();
+        if (mat == null)
+            return;
+
+        ApplyNormal();
     }
 
-    private void PlaySound()
+    void ApplyNormal()
     {
-        if (audioSource != null && hoverSound != null)
-        {
-            // Небольшая вариация высоты звука для "живости"
-            audioSource.pitch = Random.Range(1f - pitchRange, 1f + pitchRange);
-            audioSource.PlayOneShot(hoverSound);
-        }
+        mat.SetFloat(ShaderUtilities.ID_GlowPower, normalGlow);
+        mat.SetFloat(ShaderUtilities.ID_OutlineWidth, normalOutline);
     }
 }
