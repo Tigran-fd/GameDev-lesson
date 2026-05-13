@@ -1,11 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
+using PotionMaking;
 
 namespace PotionMaking
 {
     public class GameManager : MonoBehaviour
     {
         [Header("Game Components - Assign in Inspector")]
-        [SerializeField] private Player[] players;
+        private List<Player> players = new List<Player>();
+        
         [SerializeField] private DeskOfElements desk;
         [SerializeField] private Deck deck;
         [SerializeField] private TurnManager turnManager;
@@ -16,25 +19,58 @@ namespace PotionMaking
         [SerializeField] private int initialHandSize = 4;
         [SerializeField] private int initialDeskSize = 4;
         
-        private void Start()
+        private bool gameInitialized = false;
+        
+        public Player[] Players => players.ToArray();
+        
+        public void RegisterPlayer(Player player)
         {
+            if (players.Contains(player))
+                return;
+            
+            players.Add(player);
+            player.playerIndex = players.Count - 1;
+            player.playerName = $"Player {player.playerIndex + 1}";
+            player.playerColor = player.playerIndex == 0 ? Color.blue : Color.red;
+            
+            Debug.Log($"Registered {player.playerName}");
+            
+            if (players.Count == 2 && !gameInitialized)
+            {
+                StartCoroutine(InitializeGameDelayed());
+            }
+        }
+        
+        public void UnregisterPlayer(Player player)
+        {
+            players.Remove(player);
+            Debug.Log($"Unregistered player, {players.Count} remaining");
+        }
+        
+        private System.Collections.IEnumerator InitializeGameDelayed()
+        {
+            yield return new WaitForSeconds(0.5f);
             InitializeGame();
         }
         
         public void InitializeGame()
         {
+            if (gameInitialized)
+                return;
+                
+            gameInitialized = true;
+            
             Debug.Log("=== POTION MAKING PRACTICE ===");
             Debug.Log("Initializing game...");
             
             deck.Initialize();
-
+            
             desk.Initialize();
-
-            scoreManager = GetComponent<ScoreManager>();
+            
             if (scoreManager == null)
                 scoreManager = gameObject.AddComponent<ScoreManager>();
             
-            turnManager.Initialize(players, deck);
+            turnManager.Initialize(Players, deck);
             actionExecutor.Initialize(desk, scoreManager, turnManager);
             
             foreach (Player player in players)
@@ -59,23 +95,12 @@ namespace PotionMaking
                     desk.AddElement(card, element);
                 }
             }
+            
             Debug.Log($"Placed {initialDeskSize} initial cards on desk");
             
             turnManager.StartTurn();
             
             Debug.Log("Game initialized! Ready to play.");
-        }
-        
-        public void RestartGame()
-        {
-            foreach (Player player in players)
-            {
-                player.hand.Clear();
-                player.composedFormulas.Clear();
-                player.score = 0;
-            }
-            
-            InitializeGame();
         }
         
         public void DrawCard()
@@ -118,32 +143,11 @@ namespace PotionMaking
         {
             if (!turnManager.CanEndTurn)
             {
-                Debug.LogWarning("Cannot end turn yet! Must draw and play a card.");
+                Debug.LogWarning("Cannot end turn yet!");
                 return;
             }
             
             turnManager.EndTurn();
         }
-        
-        public GameState GetGameState()
-        {
-            return new GameState
-            {
-                currentPlayer = turnManager.CurrentPlayer,
-                canDraw = turnManager.CanDrawCard,
-                canPlay = turnManager.CanPlayCard,
-                canEndTurn = turnManager.CanEndTurn,
-                cardsInDeck = deck.CardsRemaining
-            };
-        }
-    }
-    
-    public struct GameState
-    {
-        public Player currentPlayer;
-        public bool canDraw;
-        public bool canPlay;
-        public bool canEndTurn;
-        public int cardsInDeck;
     }
 }
