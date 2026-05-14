@@ -8,7 +8,11 @@ public class MusicManager : MonoBehaviour
     private AudioSource audioSource;
 
     public AudioClip menuMusic;
+<<<<<<< HEAD
     public AudioClip gameMusic;
+=======
+    public AudioClip[] gameMusic;
+>>>>>>> connect-UI-to-scripts
 
     void Awake()
     {

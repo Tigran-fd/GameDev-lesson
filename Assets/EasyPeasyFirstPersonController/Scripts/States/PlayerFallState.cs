@@ -42,14 +42,24 @@ namespace EasyPeasyFirstPersonController
 
         private void ApplyGravity()
         {
-            ctx.moveDirection.y -= ctx.gravity * Time.deltaTime;
-            ctx.characterController.Move(new Vector3(0, ctx.moveDirection.y, 0) * Time.deltaTime);
-        }
+            if (ctx.characterController == null || !ctx.characterController.enabled)
+            {
+                return;
+            }
 
+            // velocity.y += gravity * Time.deltaTime;
+            // ctx.characterController.Move(velocity * Time.deltaTime);
+        }
         private void HandleAirMovement()
         {
+            if (ctx.characterController == null || !ctx.characterController.enabled)
+            {
+                return;
+            }
+
             Vector2 input = ctx.input.moveInput;
             Vector3 move = ctx.transform.right * input.x + ctx.transform.forward * input.y;
+
             ctx.characterController.Move(move * ctx.walkSpeed * 0.8f * Time.deltaTime);
         }
     }

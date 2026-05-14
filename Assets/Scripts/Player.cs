@@ -1,9 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
+using Mirror; 
 
 namespace PotionMaking
 {
-    public class Player : MonoBehaviour
+    public class Player : NetworkBehaviour
     {
         [Header("Player Identity")]
         public string playerName;
@@ -11,16 +12,79 @@ namespace PotionMaking
         public int playerIndex;
         
         [Header("Game State")]
+        [SyncVar] public int score = 0;
+        
         public List<Card> hand = new List<Card>();
         public List<ComposedFormula> composedFormulas = new List<ComposedFormula>();
-        public int score = 0;
         
         [Header("Visual References")]
         [SerializeField] private Transform handTransform;
         [SerializeField] private Transform formulaAreaTransform;
         
+        private CharacterController characterController;
+        private MonoBehaviour firstPersonController;
+        
         public bool IsHandFull => hand.Count >= 5;
         public int HandCount => hand.Count;
+        
+        public override void OnStartLocalPlayer()
+        {
+            base.OnStartLocalPlayer();
+            
+            GameManager gm = FindObjectOfType<GameManager>();
+            if (gm != null)
+            {
+                gm.RegisterPlayer(this);
+            }
+            
+            DisableMovement();
+            
+            Debug.Log("Local player spawned and registered!");
+        }
+        
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+            
+            if (!isLocalPlayer)
+            {
+                GameManager gm = FindObjectOfType<GameManager>();
+                if (gm != null)
+                {
+                    gm.RegisterPlayer(this);
+                }
+            }
+        }
+        
+        private void OnDestroy()
+        {
+            GameManager gm = FindObjectOfType<GameManager>();
+            if (gm != null)
+            {
+                gm.UnregisterPlayer(this);
+            }
+        }
+        
+        private void DisableMovement()
+        {
+            characterController = GetComponent<CharacterController>();
+            
+            firstPersonController = GetComponent<MonoBehaviour>();
+            
+            if (characterController != null)
+            {
+                characterController.enabled = false;
+            }
+        }
+        
+        public void EnableMovement()
+        {
+            if (characterController != null)
+            {
+                characterController.enabled = true;
+            }
+        }
+        
         
         public void AddCardToHand(Card card)
         {
@@ -44,7 +108,7 @@ namespace PotionMaking
         {
             if (hand.Remove(card))
             {
-                LayoutHand(); 
+                LayoutHand();
                 return true;
             }
             return false;
@@ -71,10 +135,23 @@ namespace PotionMaking
             return false;
         }
         
-        public void AddScore(int points)
+        [Command]
+        public void CmdAddScore(int points)
         {
             score += points;
             Debug.Log($"{playerName} earned {points} points! Total: {score}");
+        }
+        
+        public void AddScore(int points)
+        {
+            if (isServer)
+            {
+                score += points;
+            }
+            else
+            {
+                CmdAddScore(points);
+            }
         }
         
         private void LayoutHand()
