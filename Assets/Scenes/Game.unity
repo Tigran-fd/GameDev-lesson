@@ -2966,9 +2966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f529e8185e8baede39647a45f4c16308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.GameManager
-  players:
-  - {fileID: 0}
-  - {fileID: 0}
   desk: {fileID: 249689017}
   deck: {fileID: 957263942}
   turnManager: {fileID: 309681488}
@@ -10639,6 +10636,7 @@ GameObject:
   - component: {fileID: 1068365060}
   - component: {fileID: 1068365059}
   - component: {fileID: 1068365058}
+  - component: {fileID: 1068365061}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -10707,6 +10705,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1068365061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068365057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a4a99637badea42a110735af320a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventSystemHose
 --- !u!1001 &1079594203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13882,7 +13892,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409178125}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1409178127
 Camera:
   m_ObjectHideFlags: 0
