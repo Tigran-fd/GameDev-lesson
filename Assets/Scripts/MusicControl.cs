@@ -8,9 +8,7 @@ public class MusicManager : MonoBehaviour
     private AudioSource audioSource;
 
     public AudioClip menuMusic;
-    public AudioClip[] gameMusic;
-
-    private int lastIndex = -1;
+    public AudioClip gameMusic;
 
     void Awake()
     {
@@ -30,8 +28,7 @@ public class MusicManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        // если сцена уже загружена
-        HandleMusic(SceneManager.GetActiveScene().name);
+        PlayMusic(SceneManager.GetActiveScene().name);
     }
 
     void OnDestroy()
@@ -41,50 +38,32 @@ public class MusicManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        HandleMusic(scene.name);
+        PlayMusic(scene.name);
     }
 
-    void HandleMusic(string sceneName)
+    void PlayMusic(string sceneName)
     {
-        if (sceneName == "main menu")
+        if (sceneName == "Main Menu")
         {
             PlayMenuMusic();
         }
-        else if (sceneName == "Game")
+        else
         {
-            PlayRandomGameMusic();
+            PlayGameMusic();
         }
     }
 
     void PlayMenuMusic()
     {
-        if (menuMusic == null) return;
-
         audioSource.clip = menuMusic;
         audioSource.loop = true;
         audioSource.Play();
     }
 
-    void PlayRandomGameMusic()
+    void PlayGameMusic()
     {
-        if (gameMusic.Length == 0) return;
-
-        int index = Random.Range(0, gameMusic.Length);
-
-        audioSource.loop = false;
-        audioSource.clip = gameMusic[index];
+        audioSource.clip = gameMusic;
+        audioSource.loop = true;
         audioSource.Play();
-    }
-
-    void Update()
-    {
-        // только дл€ game music Ч переключение треков
-        if (SceneManager.GetActiveScene().name == "Game")
-        {
-            if (!audioSource.isPlaying)
-            {
-                PlayRandomGameMusic();
-            }
-        }
     }
 }
