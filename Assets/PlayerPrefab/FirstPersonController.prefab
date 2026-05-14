@@ -232,6 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2922308556bc98e4898cb3309250e781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   walkSpeed: 3
   sprintSpeed: 5
   crouchSpeed: 1.5
@@ -325,12 +328,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69bb72f4bbdb469cb1d6ba55b40c184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PotionMaking.Player
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   playerName: 
   playerColor: {r: 0, g: 0, b: 0, a: 0}
   playerIndex: 0
+  score: 0
   hand: []
   composedFormulas: []
-  score: 0
   handTransform: {fileID: 4422882183410221289}
   formulaAreaTransform: {fileID: 4165570866974887120}
 --- !u!1 &9156347144365898844

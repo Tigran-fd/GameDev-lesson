@@ -1,8 +1,11 @@
+using UnityEngine;
+using Mirror;
+
 namespace EasyPeasyFirstPersonController
 {
     using UnityEngine;
 
-    public partial class FirstPersonController : MonoBehaviour
+    public partial class FirstPersonController : NetworkBehaviour
     {
         [Header("Settings")]
         public float walkSpeed = 3f;
@@ -87,6 +90,42 @@ namespace EasyPeasyFirstPersonController
             if (currentState != null && Application.isEditor && currentStateDebug)
                 GUILayout.Label("Current State: " + currentState.GetType().Name);
         }
+        public override void OnStartLocalPlayer()
+        {
+          base.OnStartLocalPlayer();
+
+    // Блокируем курсор только для СЕБЯ
+          Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+    // Включаем СВОЮ камеру (через gameObject, как мы выяснили)
+           if (playerCamera != null) 
+            {
+              playerCamera.gameObject.SetActive(true);
+        
+                // Включаем СВОИ уши
+               AudioListener al = playerCamera.GetComponent<AudioListener>();
+             if (al != null) al.enabled = true;
+             }
+        }
+
+            public override void OnStartClient()
+        {
+         base.OnStartClient();
+    
+         // Если это ЧУЖОЙ игрок на нашем экране
+            if (!isLocalPlayer)
+          {
+        // Выключаем его камеру, чтобы она не рендерила
+        if (playerCamera != null) 
+        {
+            playerCamera.gameObject.SetActive(false);
+        }
+        
+        // Выключаем сам скрипт контроллера, чтобы он не ел ресурсы и не баговал
+        this.enabled = false;
+           }
+        }
 
         private void Awake()
         {
@@ -94,9 +133,6 @@ namespace EasyPeasyFirstPersonController
             targetFov = normalFov;
             targetCameraY = standingCameraHeight;
             originalCamY = standingCameraHeight;
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
 
             characterController = GetComponent<CharacterController>();
             standingCharacterControllerHeight = characterController.height;
@@ -110,13 +146,25 @@ namespace EasyPeasyFirstPersonController
 
         private void Update()
         {
-            isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask, QueryTriggerInteraction.Ignore);
+            // 1. Проверка на локального игрока — база для мультиплеера
+            if (!isLocalPlayer) return;
 
-            currentState.UpdateState();
+            // 2. Логику состояний (движение, прыжки, гравитацию) полностью отключаем, 
+            // так как ходить нам не нужно. Просто комментируем её.
+            /*
+            if (characterController != null && characterController.enabled) 
+            {
+                currentState.UpdateState(); 
+            }
+            */
+
+            // 3. А вот это оставляем РАБОЧИМ:
+            // Позволяет крутить головой и смотреть на ингредиенты
             HandleRotation();
+    
+            // Обновляет визуальные эффекты (если они есть)
             UpdateVisuals();
         }
-
         private void HandleRotation()
         {
             float mouseX = input.lookInput.x * mouseSensitivity;

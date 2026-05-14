@@ -10,8 +10,6 @@ public class MusicManager : MonoBehaviour
     public AudioClip menuMusic;
     public AudioClip[] gameMusic;
 
-    private int lastIndex = -1;
-
     void Awake()
     {
         if (instance != null)
